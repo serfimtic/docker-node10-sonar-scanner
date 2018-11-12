@@ -5,6 +5,8 @@ MAINTAINER Serfim TIC
 RUN apt update && apt install -y \
   locales \
   build-essential \
+  gcc-4.8 \
+  g++-4.8 \
   git \
   openjdk-8-jdk \
   curl \
