@@ -8,6 +8,7 @@ RUN apt update && apt install -y \
   gcc-4.8 \
   g++-4.8 \
   git \
+  rpm \
   openjdk-8-jdk \
   curl \
   wget \
