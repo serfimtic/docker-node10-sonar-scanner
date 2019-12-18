@@ -55,12 +55,6 @@ if [ ! -z ${SONAR_BRANCH+x} ]; then
   COMMAND="$COMMAND -Dsonar.branch.name=$SONAR_BRANCH"
 fi
 
-# analysis by default
-if [ -z ${SONAR_ANALYSIS_MODE+x} ]; then
-  SONAR_ANALYSIS_MODE="preview"
-fi
-
-COMMAND="$COMMAND -Dsonar.analysis.mode=$SONAR_ANALYSIS_MODE"
 if [ $SONAR_ANALYSIS_MODE == "preview" ]; then
   COMMAND="$COMMAND -Dsonar.issuesReport.console.enable=true"
   COMMAND="$COMMAND -Dsonar.gitlab.failure_notification_mode=exit-code"
@@ -81,4 +75,4 @@ if [ $SONAR_ANALYSIS_MODE == "publish" ]; then
   unset CI_BUILD_REF
 fi
 
-$COMMAND $1
+$COMMAND $@
